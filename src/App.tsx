@@ -5,6 +5,7 @@ import { useState } from 'react';
 import StyledModalBox from './StyledModalBox';
 import SnackbarDemo from './SnackbarDemo';
 import DialogDemo from './DialogDemo';
+import BackdropDemo from './BackdropDemo';
 
 function App() {
   const [open, setOpen] = useState(false);
@@ -41,6 +42,7 @@ function App() {
         </div>
         <SnackbarDemo />
         <DialogDemo/>
+        <BackdropDemo/>
       </header>
 
     </div>
