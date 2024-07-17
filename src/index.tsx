@@ -6,16 +6,22 @@ import reportWebVitals from './reportWebVitals';
 import { ThemeProvider } from '@mui/material/styles';
 import CssBaseline from '@mui/material/CssBaseline';
 import theme from './theme';
+import { CacheProvider } from '@emotion/react';
+import createEmotionCache from './createEmotionCache';
+
+const cache = createEmotionCache();
 
 const root = ReactDOM.createRoot(
   document.getElementById('root') as HTMLElement
 );
 root.render(
   <React.StrictMode>
-    <ThemeProvider theme={theme}>
-      <CssBaseline />
-      <App />
-    </ThemeProvider>
+    <CacheProvider value={cache}>
+      <ThemeProvider theme={theme}>
+        <CssBaseline />
+        <App />
+      </ThemeProvider>
+    </CacheProvider>
   </React.StrictMode>
 );
 
